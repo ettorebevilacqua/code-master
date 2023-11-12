@@ -1,16 +1,19 @@
 {
   "name": "@acme/api",
   "version": "0.1.0",
+  "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "lint": "eslint . --ext .ts,.tsx",
-    "type-check": "tsc --noEmit"
+    "lint": "eslint .",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@acme/db": "*",
+    "@acme/auth": "workspace:^0.1.0",
+    "@acme/db": "workspace:^0.1.0",
     "@trpc/client": "next",
     "@trpc/server": "next",
     "superjson": "2.2.0",
